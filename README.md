@@ -1,5 +1,7 @@
 # La-Vie-Saude-Mental
 
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=La%20Vie%20Saude%20Mental&uri=https%3A%2F%2Fraw.githubusercontent.com%2FVictorF05%2FLa-Vie-Saude-Mental%2Fmain%2FLa-Vie-2022-07-24.json)
+
 Passo a passo para rodar o projeto na máquina de vocês:
 
 1 - Clonar o projeto em sua máquina;
