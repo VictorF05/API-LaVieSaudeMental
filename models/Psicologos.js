@@ -1,0 +1,32 @@
+const db = require("../database");
+const { DataTypes } = require("sequelize");
+
+
+const Psicologos = db.define('psicologos', {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    allowNull: false,
+    primaryKey: true
+  },
+  nome: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  apresentacao: {
+    type: DataTypes.STRING,
+    allowNull: false
+  }
+})
+
+// criar tabela
+// Psicologos.sync()
+
+// alterar
+// User.sync({ alter: true })
+
+module.exports = Psicologos;
