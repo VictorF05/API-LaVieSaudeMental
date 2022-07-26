@@ -1,4 +1,5 @@
 const { Psicologos } = require("../models");
+const { atualizar } = require("./pacientesController");
 
 const psicologoController = {
   // LISTAR 
@@ -38,11 +39,12 @@ const psicologoController = {
   async cadastrarPsicologo(req, res) {
     
     try {
-      const { nome, email, apresentacao} = req.body
+      const { nome, email, senha, apresentacao} = req.body
       const novosPsicologos = await Psicologos
       .create({
       nome,
       email,
+      senha,
       apresentacao,
     })
     res.status(201).json(novosPsicologos);
@@ -57,13 +59,14 @@ const psicologoController = {
   async atulizarPsicologo(req, res) {
     
     try {
-      const { id } = req.params;
-    const { nome, email, apresentacao } = req.body;
+    const { id } = req.params;
+    const { nome, email, senha, apresentacao } = req.body;
 
     await Psicologos.update(
       {
         nome,
         email,
+        senha,
         apresentacao
       },
       {
@@ -79,11 +82,11 @@ const psicologoController = {
         }
       });
 
-      if (!pacienteAtualizado) {
+      if (!psicologoAtt) {
         return res.status(404).json("id não encontrado");
     };
 
-      res.status(200).json("Psicologo atualizado com sucesso")
+      res.status(200).json(psicologoAtt)
     } catch (error) {
       return res.status(500).json(`Error: ${error}`);
     }

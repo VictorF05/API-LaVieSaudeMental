@@ -17,6 +17,9 @@ const Psicologos = db.define('psicologos', {
     type: DataTypes.STRING,
     allowNull: false
   },
+  senha: {
+    type: DataTypes.STRING
+  },
   apresentacao: {
     type: DataTypes.STRING,
     allowNull: false
@@ -24,7 +27,7 @@ const Psicologos = db.define('psicologos', {
 })
 
 // criar tabela
-// Psicologos.sync()
+Psicologos.sync()
 
 // alterar
 // User.sync({ alter: true })
