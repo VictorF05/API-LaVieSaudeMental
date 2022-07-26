@@ -10,7 +10,7 @@ const createPacientesValidation = require("../validations/pacientes/create");
 const updatePacientesValidation = require("../validations/pacientes/update");
 
 const createPsicologoValadion = require("../validations/psicologos/create");
-const updatePsicologoValadion = require("../validations/psicologos/update")
+const updatePsicologoValadion = require("../validations/psicologos/update");
 
 //##### PACIENTES #####
 routes.get("/pacientes", pacientesController.listarTodos);
