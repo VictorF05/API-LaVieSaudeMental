@@ -1,5 +1,6 @@
 const { Psicologos } = require("../models");
-const { atualizar } = require("./pacientesController");
+// const { atualizar } = require("./pacientesController");
+const bcript = require('bcryptjs');
 
 const psicologoController = {
   // LISTAR 
@@ -39,12 +40,13 @@ const psicologoController = {
   async cadastrarPsicologo(req, res) {
     
     try {
-      const { nome, email, senha, apresentacao} = req.body
+      const { nome, email, senha, apresentacao} = req.body;
+      const novaSenha = bcript.hashSync(senha, 10);
       const novosPsicologos = await Psicologos
       .create({
       nome,
       email,
-      senha,
+      senha: novaSenha,
       apresentacao,
     })
     res.status(201).json(novosPsicologos);
@@ -60,13 +62,16 @@ const psicologoController = {
     
     try {
     const { id } = req.params;
+    
     const { nome, email, senha, apresentacao } = req.body;
+
+    const novaSenha = bcript.hashSync(senha, 10)
 
     await Psicologos.update(
       {
         nome,
         email,
-        senha,
+        senha: novaSenha,
         apresentacao
       },
       {

@@ -2,7 +2,7 @@ const db = require("../database");
 const { DataTypes } = require("sequelize");
 
 
-const Psicologos = db.define('psicologos', {
+const Psicologos = db.define('Psicologos', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -27,7 +27,7 @@ const Psicologos = db.define('psicologos', {
 })
 
 // criar tabela
-Psicologos.sync()
+// Psicologos.sync()
 
 // alterar
 // User.sync({ alter: true })
