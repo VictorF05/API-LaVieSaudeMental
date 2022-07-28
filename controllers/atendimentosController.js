@@ -8,7 +8,8 @@ const atendimentosController = {
   async listarAtendimentos(req, res) {
     try {
       const listarAtendimentos = await Atendimentos.findAll({
-        include: Psicologos, Pacientes
+        include:[ Psicologos, Pacientes ] 
+
       });
 
     res.json(listarAtendimentos)
