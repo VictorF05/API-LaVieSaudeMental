@@ -43,7 +43,7 @@ routes.put("/psicologo/:id", updatePsicologoValadion, psicologoController.atuliz
 // ###### ATENDIMETOS #########
 routes.get('/atendimentos',  atendimentosController.listarAtendimentos);
 routes.get('/atendimentos/:id', atendimentosController.atendimentosPorId);
-routes.post('/atendimentos/cadastrar',auth, atendimentosController.cadastrarAtendimetos)
+routes.post('/atendimentos/cadastrar', auth, atendimentosController.cadastrarAtendimetos)
 
 
 

@@ -7,14 +7,11 @@ const atendimentosController = {
   // LISTAR 
   async listarAtendimentos(req, res) {
     try {
-      const listarAtendimentos = await Atendimentos.findAll({
-        include:[ Psicologos, Pacientes ] 
+      const listarAtendimentos = await Atendimentos.findAll();
 
-      });
-
-    res.json(listarAtendimentos)
+      res.json(listarAtendimentos)
     } catch (error) {
-      return res.status(500).json(`Error: ${error}`);
+      return res.status(500).json(error);
     } 
   },
 
