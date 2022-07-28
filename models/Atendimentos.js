@@ -33,13 +33,21 @@ const Atendimentos = db.define(
         observacao: {
             type: DataTypes.STRING,
             allowNull: false,
-        }
+        },
+        createdAt: {
+          type: DataTypes.DATE,
+          allowNull: false,
+        },
+        updatedAt: {
+          type: DataTypes.DATE,
+          allowNull: false,
+        },
     }, 
     {
         tableName: "atendimentos"
     },
 );
 
-Atendimentos.sync()
+// Atendimentos.sync()
 
 module.exports = Atendimentos;
