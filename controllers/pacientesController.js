@@ -11,7 +11,7 @@ const pacientesController = {
         }
     },
 
-    async listarUm(req, res){
+    async listarPorId(req, res){
         try{
             const { id } = req.params;
 

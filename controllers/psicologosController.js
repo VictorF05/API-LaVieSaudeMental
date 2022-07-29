@@ -4,7 +4,7 @@ const bcript = require('bcryptjs');
 
 const psicologoController = {
   // LISTAR 
-  async listarPsicologos(req, res) {
+  async listarTodos(req, res) {
     try {
       const listaPsicologos = await Psicologos.findAll();
 
@@ -15,7 +15,7 @@ const psicologoController = {
   },
 
   // POR ID
-  async psicologoPorId(req, res){
+  async listarPorId(req, res){
     try {
       const { id } = req.params;
 
@@ -37,7 +37,7 @@ const psicologoController = {
   },
 
   // CADASTRAR
-  async cadastrarPsicologo(req, res) {
+  async cadastrar(req, res) {
     
     try {
       const { nome, email, senha, apresentacao} = req.body;
@@ -58,7 +58,7 @@ const psicologoController = {
   },
 
   // ATUALIZAR
-  async atulizarPsicologo(req, res) {
+  async atulizar(req, res) {
     
     try {
     const { id } = req.params;
@@ -99,7 +99,7 @@ const psicologoController = {
   },
 
   // DELETAR
-  async deletarPsicologo(req, res) {
+  async deletar(req, res) {
     try {
       const { id } = req.params;
 
