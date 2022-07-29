@@ -5,7 +5,7 @@ const { Psicologos } = require('../models')
 
 const atendimentosController = {
   // LISTAR 
-  async listarAtendimentos(req, res) {
+  async listarTodos(req, res) {
     try {
       const listarAtendimentos = await Atendimentos.findAll();
 
@@ -16,7 +16,7 @@ const atendimentosController = {
   },
 
   // POR ID
-  async atendimentosPorId(req, res){
+  async listarPorId(req, res){
     try {
       const { id } = req.params;
 
@@ -38,7 +38,7 @@ const atendimentosController = {
   },
 
     // CADASTRAR
-    async cadastrarAtendimetos(req, res) {
+    async cadastrar(req, res) {
     
       try {
         const { paciente_id, data_atendimento, observacao } = req.body;
