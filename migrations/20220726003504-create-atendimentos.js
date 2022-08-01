@@ -1,8 +1,6 @@
 'use strict';
 
 const { DataTypes } = require("sequelize");
-const Pacientes = require('../models/Pacientes');
-const Psicologos = require('../models/Psicologos');
 
 module.exports = {
   async up (queryInterface, Sequelize) {
