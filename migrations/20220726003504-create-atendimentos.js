@@ -10,14 +10,14 @@ module.exports = {
       paciente_id: {
             type: DataTypes.INTEGER,
             references: {
-              model: 'Pacientes',
+              model: 'pacientes',
               key: 'id'
             }
         },
       psicologo_id: {
             type: DataTypes.INTEGER,
             references: {
-              model: 'Psicologos',
+              model: 'psicologos',
               key: 'id'
             }
         },
